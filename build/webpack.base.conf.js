@@ -77,10 +77,5 @@ module.exports = {
           loader: 'style!css!sass'
       }
     ]
-  },
-  vue: {
-    loaders: {
-      scss: 'style!css!sass'
-    }
   }
 }
