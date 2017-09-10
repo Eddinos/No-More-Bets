@@ -7,17 +7,26 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+
+  }
 }
 </script>
 
 <style>
 #app {
+  background-color: #5dbfdd;
+  width: 100%;
+  height: 100vh;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding-top: 60px;
+}
+body {
+  margin: 0;
 }
 </style>
