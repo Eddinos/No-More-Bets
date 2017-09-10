@@ -1,10 +1,7 @@
 <template>
   <div class="hello">
     <h1 class="hello__message">{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <go></go>
-    <h2>Ecosystem</h2>
-
+    <go class="hello__button"></go>
   </div>
 </template>
 
@@ -26,8 +23,20 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .hello {
+  height: 100%;
+  width: 100%;
   &__message {
     color: darkSalmon;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 </style>

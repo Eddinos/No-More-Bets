@@ -25,16 +25,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../theme/variable.scss";
   .go {
     line-height: 100px;
-    max-width: 148px;
+    max-width: 350px;
     border-radius: 50%;
-    margin: auto;
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: 'century gothic', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 100px;
     position: relative;
-    border-radius: 50%;
     cursor: pointer;
     &__text {
       position: absolute;
@@ -42,22 +41,20 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
+      color: $lightBlue;
     }
     &__circle {
-      border: 24px solid #72c6e0;
+      border: 48px solid $lightBlue;
       border-radius: 50%;
-      width: 100px;
-      height: 100px;
+      width: 250px;
+      height: 250px;
       margin: auto;
       z-index: 9;
-      &:hover {
-
-      }
     }
   }
 
   .expand {
-    animation: expand 1s forwards;
+    animation: expand .5s forwards;
   }
 
   @keyframes expand {
@@ -65,9 +62,9 @@ export default {
       opacity: 1
     }
     to {
-      transform: scale(5);
+      transform: scale(2);
       opacity: 0;
-      visibility: hidden;
+      cursor: default;
     }
   }
 </style>
