@@ -45,6 +45,8 @@ export default {
     font-size: 100px;
     position: relative;
     cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     &__text {
       position: absolute;
       top: 50%;
