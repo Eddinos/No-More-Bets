@@ -19,16 +19,15 @@ export default {
   },
   methods: {
     handleClick () {
-      this.clicked = !this.clicked;
+      this.clicked = !this.clicked
     }
   },
   computed: {
     result () {
       if (this.clicked) {
-        return this.answer;
-      }
-      else {
-        return this.text;
+        return this.answer
+      } else {
+        return this.text
       }
     }
   }

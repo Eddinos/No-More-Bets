@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     handleClick () {
-      this.answer = Math.floor(Math.random()*2) == 0 ? 'Yes !' : 'No !';
+      this.answer = Math.floor(Math.random() * 2) === 0 ? 'Yes !' : 'No !'
     }
   }
 }
