@@ -1,21 +1,27 @@
 <template>
   <div class="hello">
     <h1 class="hello__message">{{ msg }}</h1>
-    <go class="hello__button"></go>
+    <go class="hello__button" :answer="answer" @click.native="handleClick"></go>
   </div>
 </template>
 
 <script>
-import Go from '@/components/Go'
+import Go from '@/components/atoms/Go'
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Less chitchat more taptap'
+      msg: 'Less chitchat more taptap',
+      answer: ''
     }
   },
   components: {
     Go
+  },
+  methods: {
+    handleClick () {
+      this.answer = Math.floor(Math.random()*2) == 0 ? 'Yes !' : 'No !';
+    }
   }
 }
 </script>

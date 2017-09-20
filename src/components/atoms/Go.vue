@@ -2,7 +2,7 @@
   <div class="go" v-on:click="handleClick">
     <div class="go__circle" v-bind:class="{ expand: clicked }"></div>
     <div class="go__text">
-      {{ text }}
+      {{ result }}
     </div>
   </div>
 </template>
@@ -10,6 +10,7 @@
 <script type="text/javascript">
 export default {
   name: 'go',
+  props: ['answer'],
   data () {
     return {
       text: 'Go !',
@@ -18,14 +19,24 @@ export default {
   },
   methods: {
     handleClick () {
-      this.clicked = true
+      this.clicked = !this.clicked;
+    }
+  },
+  computed: {
+    result () {
+      if (this.clicked) {
+        return this.answer;
+      }
+      else {
+        return this.text;
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  @import "../theme/variable.scss";
+  @import "../../theme/variable.scss";
   .go {
     line-height: 100px;
     max-width: 350px;
