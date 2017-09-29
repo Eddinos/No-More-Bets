@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" v-bind:class="setTheme">
     <h1 class="hello__message">{{ msg }}</h1>
     <go class="hello__button" :answer="answer" @click.native="handleClick"></go>
     <h1 class="hello__message" style="top: 75%"> Click that shit boy: {{ count }}</h1>
@@ -18,7 +18,10 @@ export default {
     }
   },
   computed: {
-    ...mapState(['count'])
+    setTheme () {
+      return `hello--${this.questionColor}`
+    },
+    ...mapState(['count', 'questionColor'])
   },
   components: {
     Go
@@ -36,11 +39,11 @@ export default {
 <style lang="scss" scoped>
 @import '../../theme/variable.scss';
 .hello {
-  background-color: $blue;
+  // background-color: $blue;
   height: 100%;
   width: 100%;
   &__message {
-    color: $lightBlue;
+    // color: $lightBlue;
     position: absolute;
     top: 20%;
     left: 50%;
@@ -51,6 +54,14 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  /* Blue */
+  &--blue {
+    background-color: $blue;
+    .hello__message {
+      color: $lightBlue;
+    }
   }
 }
 </style>
