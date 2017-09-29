@@ -9,7 +9,7 @@
 
 <script type="text/javascript">
 export default {
-  name: 'go',
+  name: 'Go',
   props: ['answer'],
   data () {
     return {
@@ -43,7 +43,6 @@ export default {
     font-family: 'century gothic', Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 100px;
-    position: relative;
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -69,14 +68,5 @@ export default {
     animation: expand .5s forwards;
   }
 
-  @keyframes expand {
-    from {
-      opacity: 1
-    }
-    to {
-      transform: scale(2);
-      opacity: 0;
-      cursor: default;
-    }
-  }
+  
 </style>

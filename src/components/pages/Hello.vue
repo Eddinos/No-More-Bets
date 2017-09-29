@@ -1,20 +1,25 @@
 <template>
   <div class="hello" v-bind:class="setTheme">
+    <IconButton v-bind:iconSrc="iconImage" class="hello__menuButton"/>
     <h1 class="hello__message">{{ msg }}</h1>
-    <go class="hello__button" :answer="answer" @click.native="handleClick"></go>
+    <Go class="hello__button" :answer="answer" @click.native="handleClick"></Go>
     <h1 class="hello__message" style="top: 75%"> Click that shit boy: {{ count }}</h1>
   </div>
 </template>
 
 <script>
 import Go from '@/components/atoms/Go'
+import IconButton from '@/components/atoms/IconButton'
 import {mapState, mapMutations} from 'vuex'
+import burgerSVG from '@/assets/burger.svg'
+
 export default {
   name: 'hello',
   data () {
     return {
       msg: 'No more bets !',
-      answer: ''
+      answer: '',
+      iconImage: burgerSVG
     }
   },
   computed: {
@@ -24,7 +29,7 @@ export default {
     ...mapState(['count', 'questionColor'])
   },
   components: {
-    Go
+    Go, IconButton
   },
   methods: {
     handleClick () {
@@ -55,12 +60,18 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  &__menuButton {
+    top: 3%;
+    left: 3%;
+  }
 
   /* Blue */
   &--blue {
     background-color: $blue;
-    .hello__message {
-      color: $lightBlue;
+    .hello {
+      &__message {
+        color: $lightBlue;
+      }
     }
   }
 }
