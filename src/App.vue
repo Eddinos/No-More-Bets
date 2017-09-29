@@ -15,9 +15,8 @@ export default {
 </script>
 
 <style lang="scss">
-  @import 'theme/variable.scss';
+@import 'theme/variable.scss';
   #app {
-    background-color: $blue;
     width: 100%;
     height: 100vh;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
