@@ -21,7 +21,7 @@ export default {
   },
   getters: {
     currentQuestion: state => {
-      return state.questions.find( question => question.selected )
+      return state.questions.find(question => question.selected)
     }
   },
   mutations: {
@@ -32,8 +32,8 @@ export default {
       state.drawer.open = !state.drawer.open
     },
     changeQuestion (state, payload) {
-      state.questions.forEach( (question) => {
-        question == payload.question ? question.selected = true : question.selected = false
+      state.questions.forEach((question) => {
+        question === payload.question ? question.selected = true : question.selected = false
       })
     }
   }
