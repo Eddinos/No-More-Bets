@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'IconButton',
-  props: ['iconSrc'],
+  props: ['iconSrc', 'mutation'],
   data () {
     return {
       defaultSrc: null,
@@ -22,7 +22,7 @@ export default {
       }
       this.clicked = true
       setTimeout(() => { this.clicked = false }, 500)
-      this.$store.commit('increment')
+      this.$store.commit(this.mutation)
     }
   }
 }
@@ -33,7 +33,6 @@ export default {
 
   .iconButton {
     cursor: pointer;
-    position: relative;
     z-index: 10;
     &__aura {
       border-radius: 50%;

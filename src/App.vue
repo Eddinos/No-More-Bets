@@ -2,12 +2,14 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <router-view></router-view>
-    <IconButton v-bind:iconSrc="iconImage" class="app__menuButton"/>
+    <IconButton v-bind:iconSrc="iconImage" v-bind:mutation="'toggleDrawer'" class="app__menuButton"/>
+    <Drawer />
   </div>
 </template>
 
 <script>
 import IconButton from '@/components/atoms/IconButton'
+import Drawer from '@/components/organisms/Drawer'
 import burgerSVG from '@/assets/burger.svg'
 
 export default {
@@ -18,7 +20,7 @@ export default {
     }
   },
   components: {
-    IconButton
+    IconButton, Drawer
   }
 }
 </script>
@@ -40,6 +42,7 @@ export default {
       left: 3%;
       height: 40px;
       width: 40px;
+      position: absolute;
     }
   }
   body {
