@@ -10,7 +10,7 @@
 <script>
 import Go from '@/components/atoms/Go'
 import IconButton from '@/components/atoms/IconButton'
-import {mapState, mapMutations} from 'vuex'
+import {mapState} from 'vuex'
 import burgerSVG from '@/assets/burger.svg'
 
 export default {

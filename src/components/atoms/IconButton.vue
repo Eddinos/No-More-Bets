@@ -18,10 +18,11 @@ export default {
   methods: {
     handleClick () {
       if (this.clicked) {
-        this.clicked = false;
+        this.clicked = false
       }
-      this.clicked = true;
-      setTimeout(() => {this.clicked = false}, 500)
+      this.clicked = true
+      setTimeout(() => { this.clicked = false }, 500)
+      this.$store.commit('increment')
     }
   }
 }
