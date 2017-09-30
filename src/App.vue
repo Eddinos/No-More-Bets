@@ -2,14 +2,23 @@
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
     <router-view></router-view>
+    <IconButton v-bind:iconSrc="iconImage" class="app__menuButton"/>
   </div>
 </template>
 
 <script>
+import IconButton from '@/components/atoms/IconButton'
+import burgerSVG from '@/assets/burger.svg'
+
 export default {
   name: 'app',
+  data () {
+    return {
+      iconImage: burgerSVG
+    }
+  },
   components: {
-
+    IconButton
   }
 }
 </script>
@@ -24,7 +33,14 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    
+  }
+  .app {
+    &__menuButton {
+      top: 3%;
+      left: 3%;
+      height: 40px;
+      width: 40px;
+    }
   }
   body {
     margin: 0;

@@ -52,10 +52,9 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-      color: $lightBlue;
     }
     &__circle {
-      border: 48px solid $lightBlue;
+      border: 48px solid;
       border-radius: 50%;
       width: 250px;
       height: 250px;
@@ -68,5 +67,5 @@ export default {
     animation: expand .5s forwards;
   }
 
-  
+
 </style>

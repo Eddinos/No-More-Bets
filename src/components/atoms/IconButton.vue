@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="IconButton" @click="handleClick">
-    <img :src="iconSrc || defaultSrc" />
-    <div class="IconButton__aura" :class="{expand: clicked}"></div>
+  <div class="iconButton" @click="handleClick">
+    <img :src="iconSrc || defaultSrc" class="iconButton__image"/>
+    <div class="iconButton__aura" :class="{expand: clicked}"></div>
   </div>
 </template>
 
@@ -31,11 +31,9 @@ export default {
 <style lang="scss" scoped>
 @import "../../theme/variable.scss";
 
-  .IconButton {
+  .iconButton {
     cursor: pointer;
     position: relative;
-    height: 32px;
-    width: 32px;
     z-index: 10;
     &__aura {
       border-radius: 50%;
@@ -46,6 +44,10 @@ export default {
       position: absolute;
       top: 0;
       display: none;
+    }
+    &__image {
+      height: 100%;
+      width: 100%;
     }
   }
 
