@@ -20,11 +20,11 @@ export default {
     increment (state) {
       state.count++
     },
-    colorize(state, payload) {
-      state.questionColor = payload.color;
+    colorize (state, payload) {
+      state.questionColor = payload.color
     },
-    toggleDrawer(state) {
-      state.drawer.open = !state.drawer.open;
+    toggleDrawer (state) {
+      state.drawer.open = !state.drawer.open
     }
   }
 }
