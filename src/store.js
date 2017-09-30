@@ -1,30 +1,40 @@
 export default {
   state: {
-    count: 0,
     questionColor: 'blue',
     questions: [
       {
-        name: 'YesNo',
-        color: 'blue'
+        name: 'Yes / No',
+        color: 'blue',
+        answers: ['Yes !', 'No !'],
+        selected: true
       },
       {
-        name: 'LeftRight',
-        color: 'red'
+        name: 'Left / Right',
+        color: 'red',
+        answers: ['Left !', 'Right !'],
+        selected: false
       }
     ],
     drawer: {
       open: false
     }
   },
+  getters: {
+    currentQuestion: state => {
+      return state.questions.find( question => question.selected )
+    }
+  },
   mutations: {
-    increment (state) {
-      state.count++
-    },
     colorize (state, payload) {
       state.questionColor = payload.color
     },
     toggleDrawer (state) {
       state.drawer.open = !state.drawer.open
+    },
+    changeQuestion (state, payload) {
+      state.questions.forEach( (question) => {
+        question == payload.question ? question.selected = true : question.selected = false
+      })
     }
   }
 }

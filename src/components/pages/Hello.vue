@@ -2,13 +2,12 @@
   <div class="hello" v-bind:class="setTheme">
     <h1 class="hello__message">{{ msg }}</h1>
     <Go class="hello__button" :answer="answer" @click.native="handleClick"></Go>
-    <h1 class="hello__message" style="top: 75%"> Click that shit boy: {{ count }}</h1>
   </div>
 </template>
 
 <script>
 import Go from '@/components/atoms/Go'
-import {mapState} from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'hello',
@@ -20,17 +19,17 @@ export default {
   },
   computed: {
     setTheme () {
-      return `hello--${this.questionColor}`
+      return `hello--${this.currentQuestion.color}`
     },
-    ...mapState(['count', 'questionColor'])
+    ...mapState(['count', 'questionColor']),
+    ...mapGetters(['currentQuestion'])
   },
   components: {
     Go
   },
   methods: {
     handleClick () {
-      this.answer = Math.floor(Math.random() * 2) === 0 ? 'Yes !' : 'No !'
-      this.$store.commit('increment')
+      this.answer = Math.floor(Math.random() * 2) === 0 ? this.currentQuestion.answers[0] : this.currentQuestion.answers[1]
     }
   }
 }
