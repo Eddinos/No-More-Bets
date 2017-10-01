@@ -1,12 +1,15 @@
 <template>
-  <div class="hello" v-bind:class="setTheme">
+  <div class="hello" v-bind:style="currentQuestion.theme">
     <h1 class="hello__message">{{ msg }}</h1>
     <Go class="hello__button" :answer="answer" @click.native="handleClick"></Go>
+    <Counter class="hello__counter" />
   </div>
 </template>
 
 <script>
 import Go from '@/components/atoms/Go'
+import Counter from '@/components/atoms/Counter'
+
 import { mapState, mapGetters } from 'vuex'
 
 export default {
@@ -19,67 +22,44 @@ export default {
   },
   computed: {
     setTheme () {
-      return `hello--${this.currentQuestion.color}`
+      return this.currentQuestion.theme
     },
     ...mapState(['count', 'questionColor']),
     ...mapGetters(['currentQuestion'])
   },
   components: {
-    Go
+    Go, Counter
   },
   methods: {
     handleClick () {
-      this.answer = Math.floor(Math.random() * 2) === 0 ? this.currentQuestion.answers[0] : this.currentQuestion.answers[1]
+      var possibleAnswers = this.currentQuestion.answers
+      this.answer = possibleAnswers[Math.floor(Math.random() * possibleAnswers.length)]
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import '../../theme/variable.scss';
 .hello {
-  // background-color: $blue;
   height: 100%;
   width: 100%;
   &__message {
-    // color: $lightBlue;
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
   }
   &__button {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  /* Blue */
-  &--blue {
-    background-color: $blue;
-    .hello {
-      &__message {
-        color: $lightBlue;
-      }
-      &__button {
-        color: $lightBlue;
-      }
-    }
-  }
-
-  /* Red */
-  &--red {
-    background-color: $red;
-    .hello {
-      &__message {
-        color: $lightRed;
-      }
-      &__button {
-        color: $lightRed;
-      }
-    }
+  &__counter {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 </style>

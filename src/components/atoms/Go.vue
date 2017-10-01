@@ -1,9 +1,7 @@
 <template>
   <div class="go" v-on:click="handleClick">
     <div class="go__circle" v-bind:class="{ expand: clicked }"></div>
-    <div class="go__text">
-      {{ result }}
-    </div>
+    <div class="go__text" v-html="result"></div>
   </div>
 </template>
 
@@ -46,12 +44,14 @@ export default {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    position: relative;
     &__text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
+      white-space: nowrap;
     }
     &__circle {
       border: 48px solid;
