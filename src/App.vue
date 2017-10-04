@@ -35,13 +35,26 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    font-size: 1px;
+    @media all and (max-device-width: 1600px) and (min-device-width: 650px) {
+      font-size: 1.3px;
+    }
+    @media all and (max-device-width: 1600px) and (min-device-width: 650px) and (orientation: landscape) {
+      font-size: 0.9px;
+    }
+    @media all and (max-device-width: 649px) {
+      font-size: 2px;
+    }
+    @media all and (max-device-width: 649px) and (orientation: landscape) {
+      font-size: 0.6px;
+    }
   }
   .app {
     &__menuButton {
       top: 3%;
       left: 3%;
-      height: 40px;
-      width: 40px;
+      height: 50em;
+      width: 50em;
       position: absolute;
     }
   }

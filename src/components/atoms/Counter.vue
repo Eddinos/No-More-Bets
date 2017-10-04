@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="counter">
-    <input type="text" name="optionsNb" v-model="count" class="counter__input" value="" placeholder="wesh">
+    <input type="text" name="optionsNb" v-model="count" class="counter__input" value="" placeholder="?">
     <div class="counter__buttons">
       <div class="counter__button counter__button--up"
       @mouseover="mouseOver" @mouseleave="mouseLeave" @click="increment">&#x25B2;</div>
@@ -45,20 +45,25 @@ export default {
 <style lang="scss">
 @import '../../theme/variable.scss';
   .counter {
-    border-radius: 15px;
-    max-width: 300px;
+    border-radius: 15em;
+    border: 1em solid;
+    border-color: inherit;
+    max-width: 300em;
     display: table;
     user-select: none;
+    height: 150em;
     &__input {
-      height: 140px;
+      height: 100%;
+      display: table-cell;
       background-color: inherit;
-      border: 1px solid;
+      border: none;
+      border-right: 0.01em solid;
       border-top-left-radius: inherit;
       border-bottom-left-radius: inherit;
       font-family: 'Century gothic';
-      font-size: 100px;
+      font-size: 100em;
       font-weight: bold;
-      max-width: 150px;
+      max-width: 1.5em;
       color: inherit;
       text-align: end;
       padding-right: 15px;
@@ -68,19 +73,21 @@ export default {
     }
     &__buttons {
       display: table-cell;
-      border-style: solid;
-      border-width: 1px 1px 1px 0;
+      height: 100%;
+      border: none;
       border-top-right-radius: inherit;
       border-bottom-right-radius: inherit;
       vertical-align: middle;
     }
     &__button {
-      font-size: 50px;
-      padding: 6px;
+      font-size: 50em;
+      line-height: 1.4em;
+      height: 50%;
+      padding: 0.5rem;
       cursor: pointer;
       user-select: none;
       &--up {
-        border-bottom: 1px solid;
+        border-bottom: 0.02em solid;
         border-top-right-radius: inherit;
       }
       &--down {

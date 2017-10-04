@@ -35,12 +35,12 @@ export default {
 <style lang="scss" scoped>
   @import "../../theme/variable.scss";
   .go {
-    line-height: 100px;
-    max-width: 350px;
+    line-height: 1em;
+    max-width: 3.5em;
     border-radius: 50%;
     font-family: 'century gothic', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    font-size: 100px;
+    font-size: 100em;
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
@@ -54,10 +54,10 @@ export default {
       white-space: nowrap;
     }
     &__circle {
-      border: 48px solid;
+      border: 0.5em solid;
       border-radius: 50%;
-      width: 250px;
-      height: 250px;
+      width: 2.5em;
+      height: 2.5em;
       margin: auto;
       z-index: 9;
     }

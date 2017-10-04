@@ -46,9 +46,10 @@ export default {
   width: 100%;
   &__message {
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 34em;
   }
   &__button {
     top: 50%;
@@ -57,7 +58,7 @@ export default {
   }
   &__counter {
     position: absolute;
-    bottom: 10%;
+    bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
   }

@@ -32,17 +32,18 @@ export default {
 @import "../../theme/variable.scss";
   .drawer {
     height: 100%;
-    width: 240px;
+    width: 240em;
     position: fixed;
     top: 0;
-    left: -25%;
+    left: -250em;
     background-color: crimson;
     transition: left .5s ease-out;
     &__title {
-      margin-top: 100px;
+      margin-top: 40%;
+      margin-bottom: 5%;
       font-family: 'Century gothic';
       color: #ddd;
-      font-size: 18px;
+      font-size: 18em;
       font-weight: bold;
     }
     &__items {
@@ -50,13 +51,13 @@ export default {
     }
     &__item {
       color: #ddd;
-      font-size: 23px;
+      font-size: 23em;
       font-weight: bold;
-      height: 40px;
-      line-height: 40px;
+      height: 1.5em;
+      line-height: 1.5em;
       cursor: pointer;
       border-bottom: 1px solid $red;
-      padding: 10px 0;
+      padding: 0.4em 0;
       &:hover {
         background-color: $red;
       }

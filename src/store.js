@@ -19,7 +19,7 @@ export default {
           backgroundColor: '#f15b5b',
           color: '#e89696'
         },
-        answers: ['&#x25C0;', '&#x25B6;'],
+        answers: ['&#8592;', '&#8594;'],
         selected: false
       },
       {
