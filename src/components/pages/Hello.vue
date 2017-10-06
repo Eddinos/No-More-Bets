@@ -58,7 +58,7 @@ export default {
   }
   &__counter {
     position: absolute;
-    bottom: 6%;
+    bottom: 6vh;
     left: 50%;
     transform: translateX(-50%);
   }
