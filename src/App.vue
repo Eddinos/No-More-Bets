@@ -36,16 +36,16 @@ export default {
     text-align: center;
     color: #2c3e50;
     font-size: 1px;
-    @media all and (max-device-width: 1600px) and (min-device-width: 650px) {
+    @media all and (max-width: 1600px) and (min-width: 650px) {
       font-size: 1.3px;
     }
-    @media all and (max-device-width: 1600px) and (min-device-width: 650px) and (orientation: landscape) {
+    @media all and (max-width: 1600px) and (min-width: 650px) and (orientation: landscape) {
       font-size: 0.9px;
     }
-    @media all and (max-device-width: 649px) {
+    @media all and (max-width: 649px) {
       font-size: 2px;
     }
-    @media all and (max-device-width: 649px) and (orientation: landscape) {
+    @media all and (max-width: 649px) and (orientation: landscape) {
       font-size: 0.6px;
     }
   }
