@@ -2,7 +2,7 @@
   <div class="hello" v-bind:style="currentQuestion.theme">
     <h1 class="hello__message">{{ msg }}</h1>
     <Go class="hello__button" :answer="answer" @click.native="handleClick"></Go>
-    <Counter class="hello__counter" />
+    <Counter v-if="this.currentQuestion.count" class="hello__counter" />
   </div>
 </template>
 
@@ -52,13 +52,13 @@ export default {
     font-size: 34em;
   }
   &__button {
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   &__counter {
     position: absolute;
-    bottom: 3%;
+    top: 76%;
     left: 50%;
     transform: translateX(-50%);
   }

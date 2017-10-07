@@ -40,7 +40,7 @@ export default {
     border-radius: 50%;
     font-family: 'century gothic', Helvetica, Arial, sans-serif;
     font-weight: bold;
-    font-size: 100em;
+    font-size: 90em;
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);

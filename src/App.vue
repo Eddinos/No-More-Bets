@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <router-view></router-view>
+    <router-view @click.native="focus"></router-view>
     <IconButton v-bind:iconSrc="iconImage" v-bind:mutation="'toggleDrawer'" class="app__menuButton"/>
     <Drawer />
   </div>
@@ -12,12 +12,24 @@ import IconButton from '@/components/atoms/IconButton'
 import Drawer from '@/components/organisms/Drawer'
 import burgerSVG from '@/assets/burger.svg'
 
+import { mapMutations, mapState } from 'vuex'
 export default {
   name: 'app',
   data () {
     return {
       iconImage: burgerSVG
     }
+  },
+  methods: {
+    focus () {
+      if (this.drawer.open) {
+        this.closeDrawer()
+      }
+    },
+    ...mapMutations(['closeDrawer'])
+  },
+  computed: {
+    ...mapState(['drawer'])
   },
   components: {
     IconButton, Drawer
@@ -35,6 +47,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    overflow: hidden;
     font-size: 1px;
     @media all and (max-width: 1600px) and (min-width: 981px) {
       font-size: 1.5px;

@@ -40,7 +40,8 @@ export default {
           color: '#b470ca'
         },
         answers: [],
-        selected: false
+        selected: false,
+        count: true
       }
     ],
     drawer: {
@@ -59,10 +60,22 @@ export default {
     toggleDrawer (state) {
       state.drawer.open = !state.drawer.open
     },
+    closeDrawer (state) {
+      state.drawer.open = false
+    },
     changeQuestion (state, payload) {
       state.questions.forEach((question) => {
         question === payload.question ? question.selected = true : question.selected = false
       })
+    },
+    initAnswers (state, payload) {
+      var currentQuestion = state.find(question => payload.question == question)
+      currentQuestion.answers = []
+      let i = 1
+      while (currentQuestion.answers.length < payload.answersNb) {
+        state.find(question => payload.question == question).answers.push(`${i} !`)
+        i++
+      }
     }
   }
 }

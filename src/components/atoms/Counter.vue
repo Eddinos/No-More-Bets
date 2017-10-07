@@ -1,23 +1,26 @@
 <template lang="html">
   <div class="counter">
-    <input type="text" name="optionsNb" v-model="count" class="counter__input" value="" placeholder="?">
+    <input @click="reset" type="text" readonly name="optionsNb" v-model="count" class="counter__input" value="" placeholder="?">
     <div class="counter__buttons">
       <div class="counter__button counter__button--up"
-      @mouseover="mouseOver" @mouseleave="mouseLeave" @click="increment">&#x25B2;</div>
+      @mouseover="mouseOver" @mouseleave="mouseLeave"
+      @mousedown="handleHold($event, ()=>count++)" @mouseup="handleHold" @touchstart="handleHold($event, ()=>count++)" @touchend="handleHold">&#x25B2;</div>
       <div class="counter__button counter__button--down"
-      @mouseover="mouseOver" @mouseleave="mouseLeave" @click="decrement">&#x25BC;</div>
+      @mouseover="mouseOver" @mouseleave="mouseLeave"
+      @mousedown="handleHold($event, decrement)" @mouseup="handleHold" @touchstart="handleHold($event, decrement)" @touchend="handleHold">&#x25BC;</div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Counter',
   data () {
     return {
-      count: 0
+      count: 0,
+      intervalDown: {}
     }
   },
   methods: {
@@ -29,11 +32,32 @@ export default {
       e.target.style.color = ''
       e.target.style.backgroundColor = ''
     },
-    increment () {
-      this.count++
-    },
     decrement () {
-      this.count--
+      if (this.count > 0) {
+        this.count--
+      }
+    },
+    handleHold (e, f) {
+      if (e.type === 'mousedown' || e.type === 'touchstart') {
+        f()
+        this.intervalDown = setInterval(() => {
+          f()
+        }, 200);
+      } else if (e.type === 'mouseup' ||e.type === 'touchend') {
+        this.setAnswers()
+      }
+    },
+    reset () {
+      this.count = 0
+    },
+    setAnswers () {
+      clearInterval(this.intervalDown)
+      this.currentQuestion.answers = []
+      let i = 1
+      while (this.currentQuestion.answers.length < this.count) {
+        this.currentQuestion.answers.push(`${i} !`)
+        i++
+      }
     }
   },
   computed: {
