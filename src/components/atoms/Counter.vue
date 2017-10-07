@@ -44,6 +44,7 @@ export default {
           f()
         }, 200);
       } else if (e.type === 'mouseup' ||e.type === 'touchend') {
+        clearInterval(this.intervalDown)
         this.setAnswers()
       }
     },
@@ -51,13 +52,11 @@ export default {
       this.count = 0
     },
     setAnswers () {
-      clearInterval(this.intervalDown)
-      this.currentQuestion.answers = []
-      let i = 1
-      while (this.currentQuestion.answers.length < this.count) {
-        this.currentQuestion.answers.push(`${i} !`)
-        i++
+      var payload = {
+        question: this.currentQuestion,
+        answersNb: this.count
       }
+      this.$store.commit('initAnswers', payload)
     }
   },
   computed: {
