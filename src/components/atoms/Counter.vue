@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Counter',
@@ -42,8 +42,8 @@ export default {
         f()
         this.intervalDown = setInterval(() => {
           f()
-        }, 200);
-      } else if (e.type === 'mouseup' ||e.type === 'touchend') {
+        }, 200)
+      } else if (e.type === 'mouseup' || e.type === 'touchend') {
         clearInterval(this.intervalDown)
         this.setAnswers()
       }

@@ -69,7 +69,7 @@ export default {
       })
     },
     initAnswers (state, payload) {
-      var currentQuestion = state.questions.find(question => payload.question == question)
+      var currentQuestion = state.questions.find(question => payload.question === question)
       currentQuestion.answers = []
       let i = 1
       while (currentQuestion.answers.length < payload.answersNb) {
