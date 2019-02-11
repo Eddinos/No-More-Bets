@@ -1,6 +1,7 @@
 <template>
   <div class="go" v-on:click="handleClick">
-    <div class="go__circle" v-bind:class="{ expand: clicked }"></div>
+    <div v-if="choupi" class="far fa-heart go__heart" :class="{expand: clicked}"></div>
+    <div v-else class="go__circle" v-bind:class="{ expand: clicked }"></div>
     <div class="go__text" v-html="result"></div>
   </div>
 </template>
@@ -8,10 +9,10 @@
 <script type="text/javascript">
 export default {
   name: 'Go',
-  props: ['answer'],
+  props: ['answer', 'choupi'],
   data () {
     return {
-      text: 'Go !',
+      text: this.choupi ? '' : 'Go !',
       clicked: false
     }
   },
@@ -60,6 +61,10 @@ export default {
       height: 2.5em;
       margin: auto;
       z-index: 9;
+    }
+    &__heart {
+      z-index: 9;
+      font-size: 3.5em;
     }
   }
 

@@ -1,7 +1,6 @@
 <template>
   <div class="hello" v-bind:style="currentQuestion.theme">
-    <h1 class="hello__message">{{ msg }}</h1>
-    <Go class="hello__button" :answer="answer" @click.native="handleClick"></Go>
+    <Go class="hello__button" :answer="answer" :choupi="currentQuestion.choupi" @click.native="handleClick"></Go>
     <Counter v-if="this.currentQuestion.count" class="hello__counter" />
   </div>
 </template>

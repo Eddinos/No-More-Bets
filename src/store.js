@@ -10,7 +10,7 @@ export default {
           color: '#8adaf3'
         },
         answers: ['Yes !', 'No !'],
-        selected: true
+        selected: false
       },
       {
         name: 'Left / Right',
@@ -42,6 +42,17 @@ export default {
         answers: [],
         selected: false,
         count: true
+      },
+      {
+        name: 'Choupinette',
+        choupi: true,
+        color: 'pink',
+        theme: {
+          background: 'linear-gradient(#8A2387, #E94057, #F27121)',
+          color: 'midnightBlue'
+        },
+        answers: ['我愛你', 'b', 'c'],
+        selected: true
       }
     ],
     drawer: {
