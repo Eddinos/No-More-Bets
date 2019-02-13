@@ -51,7 +51,9 @@ export default {
           background: 'linear-gradient(#8A2387, #E94057, #F27121)',
           color: 'midnightBlue'
         },
-        answers: ['我愛你', 'b', 'c'],
+        answers: ['我愛你', 'luv u bae', 'Manue > all', 'la meilleure', 'la plus belle', 'Je t\'aime !', '#1 sur la peau douce', 'jolie même avec de la paille grasse sur la tête',
+                'trop choupinette', 'blockeuse de talent', 'Hall of Fame roller derby', 't\'as plus de coeur que cette appli', 'le monde entier m\'envie',
+              'copine de l\'année'],
         selected: true
       }
     ],
