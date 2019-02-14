@@ -52,8 +52,10 @@ export default {
           color: 'midnightBlue'
         },
         answers: ['我愛你', 'luv u bae', 'Manue > all', 'la meilleure', 'la plus belle', 'Je t\'aime !', '#1 sur la peau douce', 'jolie même avec de la paille grasse sur la tête',
-                'trop choupinette', 'blockeuse de talent', 'Hall of Fame roller derby', 't\'as plus de coeur que cette appli', 'le monde entier m\'envie',
-              'copine de l\'année'],
+          'trop choupinette', 'legendary blocker', 'Hall of Fame roller derby', 'la plus drôle', 'le monde entier m\'envie',
+          'copine de l\'année', '❤', 'même tes sœurs sont sympas', 'si je devais partir sur un île déserte je prendrais toi avant une tarte au citron', 'gentille et badass à la fois',
+          'la plus Manuefique', 'Je suis Emmarveillé devant toi', 'tu sens très bon', 'ma meilleure élève', 'lune de mes nuits', 'phare de mes tempêtes', 'Amy de mon Jake',
+          'Je pourrais manger des artichauts pour toi', 'meilleure partenaire de danse', 'championne du monde de beaux yeux'],
         selected: true
       }
     ],
