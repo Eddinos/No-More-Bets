@@ -1,24 +1,24 @@
 {
-  "name": "Rien ne va plus",
-  "short_name": "NoMoreBets",
+  "name": "Bonne fête Choupinette",
+  "short_name": "fete de Choupi",
   "icons": [
     {
-      "src": "/static/img/icons/icon-72x72.png",
+      "src": "/static/img/icons/256.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/static/img/icons/icon-96x96.png",
+      "src": "/static/img/icons/128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "/static/img/icons/icon-144x144.png",
+      "src": "/static/img/icons/256.png",
       "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "/static/img/icons/icon-192x192.png",
+      "src": "/static/img/icons/256.png",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -26,6 +26,6 @@
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",
-  "background_color": "#5dbfdd",
-  "theme_color": "#5dbfdd"
+  "background_color": "#8A2387",
+  "theme_color": "#8A2387"
 }
